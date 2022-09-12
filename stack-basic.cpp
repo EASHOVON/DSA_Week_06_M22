@@ -21,6 +21,7 @@ class Stack
 {
     Node *head;
     Node *top;
+    int count = 0;
 
 public:
     // PUSH
@@ -30,12 +31,14 @@ public:
         if (head == NULL)
         {
             head = top = newNode;
+            count++;
             return;
         }
 
         top->Next = newNode;
         newNode->Prev = top;
         top = newNode;
+        count++;
     }
 
     // POP
@@ -61,7 +64,35 @@ public:
 
         chk = delNode->value;
         delete delNode;
+        count--;
         return chk;
+    }
+
+    // Empty
+    bool empty()
+    {
+        if (head == NULL)
+            return true;
+        else
+            return false;
+    }
+    // Size
+    int size()
+    {
+        return count;
+    }
+    // Top
+    int top()
+    {
+        if (top == NULL)
+        {
+            cout << "Stack Underflow || There is no Element in the top" << endl;
+            return 0;
+        }
+        else
+        {
+            return top->value;
+        }
     }
 };
 
