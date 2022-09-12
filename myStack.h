@@ -24,6 +24,12 @@ class Stack
     int count = 0;
 
 public:
+    // Constructor
+    Stack()
+    {
+        head = NULL;
+        top = NULL;
+    }
     // PUSH
     void push(int val)
     {
