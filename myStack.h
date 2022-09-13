@@ -88,7 +88,7 @@ public:
         return count;
     }
     // Top
-    int top()
+    int Top()
     {
         if (top == NULL)
         {
